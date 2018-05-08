@@ -2,6 +2,7 @@ package gpinyin
 
 import (
 	"testing"
+	"fmt"
 )
 
 func equal(t *testing.T, got interface{}, want interface{}) {
@@ -49,4 +50,10 @@ func testEqual(t *testing.T, source string, want string) {
 	r := ConvertToPinyinString(source, "-", PINYIN_WITHOUT_TONE)
 
 	equal(t, r, want)
+}
+
+func TestMapping(t *testing.T) {
+	for k, v := range tranditionMapping {
+		fmt.Println(k, "=", v)
+	}
 }

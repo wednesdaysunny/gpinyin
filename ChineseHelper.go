@@ -57,10 +57,7 @@ func toSimplifiedChinese(source string) string {
 }
 
 func toTraditionalChinese(source string) string {
-	if traditionalChinese == nil {
-		traditionalChinese = loadMapFromResource(data_Chinese_tas, true)
-	}
-	v := traditionalChinese[source]
+	v := tranditionMapping[source]
 	if len(v) == 0 {
 		return source
 	}
