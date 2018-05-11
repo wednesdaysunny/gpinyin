@@ -2,6 +2,7 @@ package gpinyin
 
 import (
 	"regexp"
+	"bytes"
 )
 
 const (
@@ -29,11 +30,12 @@ func ConvertToSimplifiedChinese(source string) string {
 }
 
 func ConvertToTraditionalChinese(source string) string {
-	result := ""
+	var buf bytes.Buffer
 	for _, runeValue := range source {
-		result += toTraditionalChinese(string(runeValue))
+		buf.WriteString(toTraditionalChinese(string(runeValue)))
+
 	}
-	return result
+	return buf.String()
 }
 
 func loadMapFromResource(resourceName string, reverse bool) map[string]string {
