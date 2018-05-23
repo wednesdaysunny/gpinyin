@@ -1,8 +1,8 @@
 package gpinyin
 
 import (
-	"testing"
 	"fmt"
+	"testing"
 )
 
 func equal(t *testing.T, got interface{}, want interface{}) {
@@ -53,7 +53,7 @@ func testEqual(t *testing.T, source string, want string) {
 }
 
 func TestMapping(t *testing.T) {
-	for k, v := range tranditionMapping {
+	for k, v := range simpleToTraditionMapping {
 		fmt.Println(k, "=", v)
 	}
 }

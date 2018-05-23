@@ -48,7 +48,7 @@ func loadMapFromResource(resourceName string, reverse bool) map[string]string {
 }
 
 func toSimplifiedChinese(source string) string {
-	v := simpleToTraditionMapping[source]
+	v := traditionToSimpleMapping[source]
 	if len(v) == 0 {
 		return source
 	}
@@ -56,7 +56,7 @@ func toSimplifiedChinese(source string) string {
 }
 
 func toTraditionalChinese(source string) string {
-	v := tranditionMapping[source]
+	v := simpleToTraditionMapping[source]
 	if len(v) == 0 {
 		return source
 	}
